@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     'mysite.core',
+
+    'dashing',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
