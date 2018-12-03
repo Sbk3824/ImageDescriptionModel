@@ -3,7 +3,6 @@ from django.urls import path, include
 
 from mysite.core import views
 
-from dashing.utils import router
 
 
 urlpatterns = [
@@ -12,6 +11,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('analysis/', views.analysis.as_view(), name='analysis'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('profile/', views.profile, name='profile'),
     path('admin/', admin.site.urls),
-    path('check/', include(router.urls)),
 ]
