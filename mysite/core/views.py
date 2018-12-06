@@ -33,6 +33,8 @@ def profile(request):
 def dashboard(request):
     return render(request, 'dashboard.html')
 
+def faq(request):
+    return render(request, 'faq.html')
 
 class analysis(LoginRequiredMixin, TemplateView):
     template_name = 'analysis.html'
