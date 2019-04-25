@@ -33,6 +33,10 @@ def profile(request):
 def dashboard(request):
     return render(request, 'dashboard.html')
 
+@login_required
+def test(request):
+    return render(request, 'test.html')
+
 def faq(request):
     return render(request, 'faq.html')
 
