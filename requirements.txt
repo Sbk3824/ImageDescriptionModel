@@ -1,3 +1,10 @@
+certifi==2019.3.9
+chardet==3.0.4
 Django==2.1.2
 django-crispy-forms==1.7.2
+django-dashing==0.3.3
+idna==2.8
+jet-django==0.5.9
 pytz==2018.7
+requests==2.21.0
+urllib3==1.24.1

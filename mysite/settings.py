@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     'mysite.core',
 
+    'jet_django',
+
     'dashing',
 ]
 
