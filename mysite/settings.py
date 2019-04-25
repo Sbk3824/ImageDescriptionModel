@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'mysite.core',
 
     'jet_django',
-
-    'dashing',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -135,3 +133,6 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIA_URL = '/mediia/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

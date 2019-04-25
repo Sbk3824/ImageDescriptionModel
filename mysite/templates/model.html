@@ -1,0 +1,32 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Home</li>
+{% endblock %}
+
+{% block content %}
+
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h2 class="display-3">Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %} !!</h2>
+          <p>Welcome to Image Descriptor Model Site.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+      <div class="container">
+ 
+  	<p>
+  		<strong>Total users registered: </strong> {{ count }}
+    </p>
+    {% for n in pic %}
+    <a href="{{n.filr.url}}">{{n.file.name}}</a>
+    {% endfor %}
+  
+	</div>
+{% endblock %}
