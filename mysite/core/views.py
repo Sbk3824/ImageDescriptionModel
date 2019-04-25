@@ -48,12 +48,12 @@ def dashboard(request):
     concepts = response['outputs'][0]['data']['concepts']
     for concept in concepts:
         print(concept['name'], concept['value'])    
-    
+
     return render(request, 'dashboard.html')
 
 @login_required
 def test(request):
-    os.system('python C:/tensorflow1/ImageDescriptorModel-master/mysite/core/models/research/object_detection/Object_detection_webcam.py')
+    os.system('python C:/tensorflow1/ImageDescriptorModel-master/mysite/core/Object_detection_webcam.py')
 
     img = Image()
     img.image ="C:/tensorflow1/ImageDescriptorModel-master/opencv_frame_0.png"
