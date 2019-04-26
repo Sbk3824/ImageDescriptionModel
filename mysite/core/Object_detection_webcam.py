@@ -23,7 +23,7 @@ import cv2
 import numpy as np
 import tensorflow as tf
 import sys
-
+from shutil import copy
 # This is needed since the notebook is stored in the object_detection folder.
 sys.path.append("..")
 
@@ -111,8 +111,8 @@ while(True):
         np.squeeze(scores),
         category_index,
         use_normalized_coordinates=True,
-        line_thickness=8,
-        min_score_thresh=0.60)
+        line_thickness=4,
+        min_score_thresh=0.50)
 
     # All the results have been drawn on the frame, so it's time to display it.
     cv2.imshow('Object detector', frame)
@@ -123,10 +123,12 @@ while(True):
         # SPACE pressed
         img_name = "opencv_frame_{}.png".format(img_counter)
         cv2.imwrite(img_name, frame)
+        
         print("{} written!".format(img_name))
         img_counter += 1
     # Press 'q' to quit
     if k == ord('q'):
+        copy('C:/tensorflow1/ImageDescriptorModel-master/opencv_frame_0.png','C:/tensorflow1/ImageDescriptorModel-master/media')
         break
 
 # Clean up

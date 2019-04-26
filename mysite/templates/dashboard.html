@@ -4,7 +4,7 @@
 
 
 {% block content %}
-  <p>This is a Dashboard!</p>
+  <p>Welcome to your Dashboard!</p>
 
 
   <div class="container-fluid">
@@ -21,19 +21,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
+                  Documents
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="users"></span>
-                  Customers
+                  Share
                 </a>
               </li>
               <li class="nav-item">
@@ -60,25 +54,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
-                  Current month
+                  4/26/2019 03:38PM
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
-                  Last quarter
+                  4/26/2019 04:10PM
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
+              
                 </a>
               </li>
             </ul>
@@ -95,137 +80,144 @@
               </div>
               <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
                 <span data-feather="calendar"></span>
-                This week
+                Select Model
               </button>
             </div>
           </div>
 
           <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-          <h2>Section title</h2>
+          <h2>All Features</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Feature</th>
+                  <th>Confidence Score</th>
+                  
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
+                  <td>1</td>
+                  <td><p id="feature1"></p></td>
+                  <td><p id="value1"></p></td>
+                 
                 </tr>
                 <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
+                  <td>2</td>
+                  <td><p id="feature2"></p></td>
+                  <td><p id="value2"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
+                  <td>3</td>
+                  <td><p id="feature3"></p></td>
+                  <td><p id="value3"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
+                  <td>4</td>
+                  <td><p id="feature4"></p></td>
+                  <td><p id="value4"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
+                  <td>5</td>
+                  <td><p id="feature5"></p></td>
+                  <td><p id="value5"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
+                  <td>6</td>
+                  <td><p id="feature6"></p></td>
+                  <td><p id="value6"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
+                  <td>7</td>
+                  <td><p id="feature7"></p></td>
+                  <td><p id="value7"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
+                  <td>8</td>
+                  <td><p id="feature8"></p></td>
+                  <td><p id="value8"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
+                  <td>9</td>
+                  <td><p id="feature9"></p></td>
+                  <td><p id="value9"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
+                  <td>10</td>
+                  <td><p id="feature10"></p></td>
+                  <td><p id="value10"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
+                  <td>11</td>
+                  <td><p id="feature11"></p></td>
+                  <td><p id="value11"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
+                  <td>12</td>
+                  <td><p id="feature12"></p></td>
+                  <td><p id="value12"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
+                  <td>13</td>
+                  <td><p id="feature13"></p></td>
+                  <td><p id="value13"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
+                  <td>14</td>
+                  <td><p id="feature14"></p></td>
+                  <td><p id="value14"></p></td>
+                  
                 </tr>
                 <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
+                  <td>15</td>
+                  <td><p id="feature15"></p></td>
+                  <td><p id="value15"></p></td>
+                 
                 </tr>
                 <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
+                  <td>16</td>
+                  <td><p id="feature16"></p></td>
+                  <td><p id="value16"></p></td>
+                  
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td><p id="feature17"></p></td>
+                  <td><p id="value17"></p></td>
+                  
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td><p id="feature18"></p></td>
+                  <td><p id="value18"></p></td>
+                  
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td><p id="feature19"></p></td>
+                  <td><p id="value19"></p></td>
+                  
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td><p id="feature20"></p></td>
+                  <td><p id="value20"></p></td>
+                  
                 </tr>
               </tbody>
             </table>
@@ -252,12 +244,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
       var ctx = document.getElementById("myChart");
+      var jsonObject = JSON.parse('{{ concepts_json | escapejs }}');
+      console.log(jsonObject);
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          //labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          labels: [jsonObject[0].name, jsonObject[1].name, jsonObject[2].name, jsonObject[3].name, jsonObject[4].name, jsonObject[5].name, jsonObject[6].name, jsonObject[7].name, jsonObject[8].name, jsonObject[9].name],
           datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            data: [jsonObject[0].value, jsonObject[1].value, jsonObject[2].value, jsonObject[3].value, jsonObject[4].value, jsonObject[5].value, jsonObject[6].value, jsonObject[7].value, jsonObject[8].value, jsonObject[9].value],
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
@@ -278,5 +273,54 @@
           }
         }
       });
-    </script>
+      document.getElementById("feature1").innerHTML=jsonObject[0].name;
+      document.getElementById("feature2").innerHTML=jsonObject[1].name;
+      document.getElementById("feature3").innerHTML=jsonObject[2].name;
+      document.getElementById("feature4").innerHTML=jsonObject[3].name;
+      document.getElementById("feature5").innerHTML=jsonObject[4].name;
+      document.getElementById("feature6").innerHTML=jsonObject[5].name;
+
+      document.getElementById("feature7").innerHTML=jsonObject[6].name;
+      document.getElementById("feature8").innerHTML=jsonObject[7].name;
+      document.getElementById("feature9").innerHTML=jsonObject[8].name;
+
+      document.getElementById("feature10").innerHTML=jsonObject[9].name;
+      document.getElementById("feature11").innerHTML=jsonObject[10].name;
+      document.getElementById("feature12").innerHTML=jsonObject[11].name;
+
+      document.getElementById("feature13").innerHTML=jsonObject[12].name;
+      document.getElementById("feature14").innerHTML=jsonObject[13].name;
+      document.getElementById("feature15").innerHTML=jsonObject[14].name;
+      document.getElementById("feature16").innerHTML=jsonObject[15].name;
+      document.getElementById("feature17").innerHTML=jsonObject[16].name;
+      document.getElementById("feature18").innerHTML=jsonObject[17].name;
+      document.getElementById("feature19").innerHTML=jsonObject[18].name;
+      document.getElementById("feature20").innerHTML=jsonObject[19].name;
+
+      document.getElementById("value1").innerHTML=jsonObject[0].value;
+      document.getElementById("value2").innerHTML=jsonObject[1].value;
+      document.getElementById("value3").innerHTML=jsonObject[2].value;
+      document.getElementById("value4").innerHTML=jsonObject[3].value;
+      document.getElementById("value5").innerHTML=jsonObject[4].value;
+      document.getElementById("value6").innerHTML=jsonObject[5].value;
+
+      document.getElementById("value7").innerHTML=jsonObject[6].value;
+      document.getElementById("value8").innerHTML=jsonObject[7].value;
+      document.getElementById("value9").innerHTML=jsonObject[8].value;
+
+      document.getElementById("value10").innerHTML=jsonObject[9].value;
+      document.getElementById("value11").innerHTML=jsonObject[10].value;
+      document.getElementById("value12").innerHTML=jsonObject[11].value;
+
+      document.getElementById("value13").innerHTML=jsonObject[12].value;
+      document.getElementById("value14").innerHTML=jsonObject[13].value;
+      document.getElementById("value15").innerHTML=jsonObject[14].value;
+      document.getElementById("value16").innerHTML=jsonObject[15].value;
+      document.getElementById("value17").innerHTML=jsonObject[16].value;
+      document.getElementById("value18").innerHTML=jsonObject[17].value;
+      document.getElementById("value19").innerHTML=jsonObject[18].value;
+      document.getElementById("value20").innerHTML=jsonObject[19].value;
+     
+
+      </script>
 {% endblock %}

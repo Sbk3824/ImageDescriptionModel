@@ -34,10 +34,13 @@
     		<h4 class="d-flex justify-content-between align-items-center mb-3">
     		<label for="exampleFormControlTextarea1" >Image Here</label>
 			</h4>
-    		<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Image" rows="20"></textarea>
+    	<img src="/opencv_frame_0.png" height="450" width="650"> 
   		</div>
     </div>
     </div>
+    <!--<div class="col-md-8 order-md-1">
+        <img src="/media/opencv_frame_0.png" height="320" width="480"> 
+    </div>-->
 
    
     <!-- Bootstrap core JavaScript
@@ -57,13 +60,16 @@
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
-      var ctx = document.getElementById("myChart");
+
+var jsonObject = JSON.parse('{{ concepts_json | escapejs }}');
+      console.log(jsonObject);
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          //labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          labels: [jsonObject[0].name, jsonObject[1].name, jsonObject[2].name, jsonObject[3].name, jsonObject[4].name, jsonObject[5].name, jsonObject[6].name, jsonObject[7].name, jsonObject[8].name, jsonObject[9].name],
           datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            data: [jsonObject[0].value, jsonObject[1].value, jsonObject[2].value, jsonObject[3].value, jsonObject[4].value, jsonObject[5].value, jsonObject[6].value, jsonObject[7].value, jsonObject[8].value, jsonObject[9].value],
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
@@ -84,5 +90,6 @@
           }
         }
       });
+      
     </script>
 {% endblock %}

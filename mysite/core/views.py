@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
-
+import json
 from .models import Image
 
 import cv2
@@ -13,7 +13,7 @@ import sys
 import os
 
 from clarifai.rest import ClarifaiApp
-
+from clarifai.rest import Image as ClImage
 
 def home(request):
     count = User.objects.count()
@@ -41,15 +41,16 @@ def profile(request):
 @login_required
 def dashboard(request):
 
-    
+    #Clarifai API Call
     app = ClarifaiApp(api_key='18e645eb7c0f49d594ca9cc0a680a9c5')
     model = app.public_models.general_model
-    response = model.predict_by_filename('C:/tensorflow1/ImageDescriptorModel-master/opencv_frame_0.png')
+    response = model.predict_by_filename('C:/tensorflow1/ImageDescriptorModel-master/media/opencv_frame_0.png')
     concepts = response['outputs'][0]['data']['concepts']
+    print('I am inside Views.py')
     for concept in concepts:
         print(concept['name'], concept['value'])    
-
-    return render(request, 'dashboard.html')
+    json_string = json.dumps(concepts)
+    return render(request, 'dashboard.html', {'concepts_json': json_string})
 
 @login_required
 def test(request):
@@ -62,7 +63,44 @@ def test(request):
     all = Image.objects.all().values()
     print(all)
     pic = Image.objects.all().order_by('-id')
-    return render(request, 'test.html', {"img":pic})
+
+    
+    #Clarifai API Call
+    app = ClarifaiApp(api_key='18e645eb7c0f49d594ca9cc0a680a9c5')
+    
+    
+    #General Model
+    model = app.public_models.general_model
+    response = model.predict_by_filename('C:/tensorflow1/ImageDescriptorModel-master/media/opencv_frame_0.png')
+    concepts = response['outputs'][0]['data']['concepts']
+    for concept in concepts:
+        print(concept['name'], concept['value'])    
+    json_string = json.dumps(concepts)
+    
+    #Faces Model
+    model1 = app.models.get('face-v1.3')
+    #response1 = model1.predict_by_filename('C:/tensorflow1/ImageDescriptorModel-master/media/opencv_frame_0.png')
+    response1 = model1.predict_by_url(url='https://premierleague-static-files.s3.amazonaws.com/premierleague/photo/2018/09/25/a87449ac-ca40-4875-a67c-4d2986ba5017/Man-City-fans-celebrate-v-Arsenal-lead.png')
+       
+    print(response1)
+    #item_dict = json.loads(response1)
+    numface = len(response1['outputs'][0]['data']['regions'])
+
+
+    #Color Model
+    model2 = app.models.get('color')
+    response2 = model2.predict_by_filename('C:/tensorflow1/ImageDescriptorModel-master/media/opencv_frame_0.png')
+    #image = ClImage('C:/tensorflow1/ImageDescriptorModel-master/media/opencv_frame_0.png')
+    #print(model2.predict([image]))
+    print('this is color model perint !!!!!!!!!!!!@@@@@@@@@@@@!!!!!')
+    print(response2)
+
+    colorname = response2['outputs'][0]['data']['colors'][0]['w3c']['name']
+    print(colorname)
+
+
+    
+    return render(request, 'analysis.html', {'concepts_json': json_string})
 
 def faq(request):
 
