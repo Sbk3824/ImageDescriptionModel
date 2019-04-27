@@ -14,14 +14,73 @@
         <div class="container">
           <h2 class="display-3">Hello, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %} !!</h2>
           <p>Welcome to Image Descriptor Model Site.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+          <p><a class="btn btn-primary btn-lg" href="{% url 'test' %}" role="button">Get Started &raquo;</a></p>
         </div>
       </div>
+      
       <div class="container">
- 
-  	<p>
-  		<strong>Total users registered: </strong> {{ count }}
-    </p>
-    <img src="C:\tensorflow1\ImageDescriptorModel-master\opencv_frame_0.png">
-	</div>
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="col-md-4">
+              <h2>Image Analysis</h2>
+              <p>Take Images from the Camera and analyse the captured images. Mobile Camera, WebCam, and, Standalone camera supported </p>
+              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+              <h2>Video Analysis</h2>
+              <p>Analyse the video stream. Real time video analysed using Tensorflow libraries. OpenCV used to access cameras.</p>
+              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+              <h2>Image Descriptor</h2>
+              <p>Know more about the image or video with interactive image descriptor built using tensorflow and clarifyapi</p>
+              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+          </div>
+          <br>
+  
+        <div class="container">
+   
+        <div class="container">
+        <strong>Number of IDM users : </strong> {{ count }}
+        </div>
+      
+       </div>
+  
+       <footer class="pt-4 my-md-5 pt-md-5 border-top">
+          <div class="row">
+            <div class="col-12 col-md">
+              <p>IDM</p>
+              <small class="d-block mb-3 text-muted">&copy; Spartans</small>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Features</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Video Analysis</a></li>
+                <li><a class="text-muted" href="#">Image Analysis</a></li>
+                <li><a class="text-muted" href="#">Image Descriptor</a></li>
+                <li><a class="text-muted" href="#">Account Management</a></li>
+                <li><a class="text-muted" href="#">Mobile Support</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Technologies</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="https://www.tensorflow.org/">Tensorflow</a></li>
+                <li><a class="text-muted" href="https://www.djangoproject.com/">Django Framwework</a></li>
+                <li><a class="text-muted" href="https://clarifai.com/">Clarify Api</a></li>
+                <li><a class="text-muted" href="https://www.python.org/">Python</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md">
+              <h5>Team</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="https://www.linkedin.com/in/abhishekyadavcse/">Abhishek</a></li>
+                <li><a class="text-muted" href="https://www.linkedin.com/in/prasunsaxena/">Prasun</a></li>
+                <li><a class="text-muted" href="https://www.linkedin.com/in/rajeev-patil899/">Rajeev</a></li>
+                <li><a class="text-muted" href="https://www.linkedin.com/in/shantagouda/">Shantagouda</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
 {% endblock %}

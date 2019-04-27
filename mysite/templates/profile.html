@@ -2,9 +2,34 @@
 {% load static %}
 
 {% block content %}
-  <p>Welcome to your profile, {{ user.username }} !! </p>
-  <p> How are you doing today ?</p>
 
-
-
+  <div class="container-fluid">
+      <p><h3>Welcome to your profile, {{ user.username }} !! </h3></p>
+      <p> How are you doing today ?</p>
+    </div>
+    <hr><br>
+    
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8 order-md-2 mb-4">
+          <strong>Your details</strong><hr>
+            User Name: {{ user.username }} <br>
+    
+            Permissions: {{ user.user_permissions }} <br>
+    
+            Staff Status: {{ user.is_staff }} <br><br>
+    
+            You last logged in on: <i>{{ user.last_login }}</i> <br>
+            You joined IDM on: <i>{{ user.date_joined }} </i><br>
+        </div>
+      
+    
+        <div class="col-md-4 order-md-2 mb-4">
+          <strong>Others Users on the IDM</strong><br><hr>
+          {% for user in users %}
+              {{user.username}} <br>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
 {% endblock %}ß

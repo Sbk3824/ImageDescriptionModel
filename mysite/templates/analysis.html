@@ -4,28 +4,119 @@
 
 
 {% block content %}
-  <h2>Iamge Descriptor</h2>
-  <p> NLP Supoorted</p>
-
-
+  <h2>Image Descriptor</h2>
+  
   <div class="container-fluid">
     <div class="row">
     <div class="col-md-4 order-md-2 mb-4">
-    <div class="form-group">
-    	<h4 class="d-flex justify-content-between align-items-center mb-3">
-    	<label for="exampleFormControlTextarea1" >Ask a Question</label>
-		</h4>
-    	<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="How many cars do you see?" rows="4"></textarea>
-  	</div>
-  	<br>
-  	<hr>
-  	<br>
-  	<div class="form-group">
-    	<h4 class="d-flex justify-content-between align-items-center mb-3">
-    	<label for="exampleFormControlTextarea1" >Answer</label>
-		</h4>
-    	<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="8" rows="4"></textarea>
-  	</div>
+    
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    What do you see in the picture ?
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    The context of the picture is about {{dict_main.c1}} , {{dict_main.c2}} and {{dict_main.c3}}
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      How many faces appear in the picture?
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    {{dict_main.numface}}
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    What are the dominant colors in the picture?
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  Main colors in the picture are {{dict_main.color1}}, {{dict_main.color2}} and  {{dict_main.color3}}
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      What is the color of there shirt?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    The shirt appears to be {{dict_main.color1}} in color
+  
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+          <div class="card">
+              <div class="card-header" id="headingSix">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                     How old is the person? 
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body">
+                  The person in the picture appears to be {{dict_main.age}} years of age
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                       Can you identify the person's gender? 
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    They appear to be a {{dict_main.gender}}
+  
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                  <div class="card-header" id="headingEight">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                         What is the person's ethnicity 
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                    <div class="card-body">
+                      The person is probably {{dict_main.ethnicity}}
+    
+                    </div>
+                  </div>
+                </div>
    </div>
 
 
@@ -60,7 +151,7 @@
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
-
+/*
 var jsonObject = JSON.parse('{{ concepts_json | escapejs }}');
       console.log(jsonObject);
       var myChart = new Chart(ctx, {
@@ -90,6 +181,9 @@ var jsonObject = JSON.parse('{{ concepts_json | escapejs }}');
           }
         }
       });
-      
+
+  var jsonObject1 = JSON.parse('{{ numface | escapejs }}');
+  console.log(jsonObject1);
+  */   
     </script>
 {% endblock %}

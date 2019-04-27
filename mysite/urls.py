@@ -9,7 +9,7 @@ from mysite import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
  
- 
+
 
 
 urlpatterns = [
